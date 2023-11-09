@@ -1,16 +1,14 @@
-$(function () {
-  const $carouselInner = $(".carousel-inner");
-  $carouselInner.find(">:first-child").addClass('active')
-  const $authButton = $(".authButton");
-  const $authLink = $(".authChoice");
+$(document).ready(function () {
+  // Set an interval to switch to the next slide every 6 seconds
+  setInterval(function () {
+    $('#carousel').carousel('next');
+  }, 6000);
 
-  $authLink.click(ev => {
-    ev.stopPropagation();
-  })
-
-  $authButton.click(ev => {
-    const $this = $(ev.target);
-    $this.find(".auth-link").trigger('click');
-  })
-
+  // Reset the interval when a slide is clicked
+  $('.carousel-control-prev, .carousel-control-next').click(function () {
+    clearInterval(intervalId);
+    intervalId = setInterval(function () {
+      $('#carousel').carousel('next');
+    }, 6000);
+  });
 });

@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="public/assets/bootstrap-4.6.2/css/bootstrap.min.css">
-  <title>Homepage</title>
+  <title>Login</title>
   <script src="https://kit.fontawesome.com/e2a332a799.js" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="public/img/logo.svg" type="image/x-icon">
   <script src="public/assets/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="public/css/meyawo.css">
   <link rel="stylesheet" href="public/css/styles.css">
   <script>
     $(() => {
@@ -30,25 +31,24 @@
 
       <div class="row justify-content-center">
         <div class="col-lg-7">
-          <h1>Login</h1>
+          <h1 style="color: rgba(0, 0, 0, 0.9);">Login</h1>
           <p>Please fill out the following fields to login:</p>
-
           <form id="login-form" action="/site/login" method="post">
             <input type="hidden" name="_csrf-frontend"
               value="gQRWN3WOUNjHpsHHNHVo0A6MNMTY_TX8QtirSTJZPkDbVyZHB-gyvrfWrPBgOAaGTPl_rL6LB8ks6NIuemBhMw==">
             <div class="form-group field-loginform-username required">
               <label for="loginform-username">Username</label>
-              <input type="text" id="loginform-username" class="form-control is-invalid" name="LoginForm[username]"
-                autofocus="" aria-required="true" aria-invalid="true">
+              <input type="text" id="loginform-username" class="form-control" name="LoginForm[username]" autofocus=""
+                aria-required="true" aria-invalid="true">
 
-              <div class="invalid-feedback">Username cannot be blank.</div>
+              <div class="invalid-feedback"></div>
             </div>
             <div class="form-group field-loginform-password required">
               <label for="loginform-password">Password</label>
               <input type="password" id="loginform-password" class="form-control" name="LoginForm[password]" value=""
                 autocomplete="on" aria-required="true">
 
-              <div class="invalid-feedback"></div>
+              <div class="invalid-feedback">asdfasdfasdfasdf</div>
             </div>
             <div class="form-group field-loginform-rememberme">
               <div class="custom-control custom-checkbox">
@@ -59,15 +59,8 @@
 
               </div>
             </div>
-
-            <!-- <div style="color:#999;margin:1em 0">
-              If you forgot your password you can <a href="/site/request-password-reset">reset it</a>.
-              <br>
-              Need new verification email? <a href="/site/resend-verification-email">Resend</a>
-            </div> -->
-
             <div class="form-group">
-              <button type="submit" class="btn btn-primary" name="login-button">Login</button>
+              <button type="submit" class="btn btn-outline-dark rounded name=" login-button">Login</button>
             </div>
 
             <div id="w0">
@@ -91,7 +84,41 @@
   <div id="footer"></div>
 
   <script src="public/assets/bootstrap-4.6.2/js/bootstrap.bundle.min.js"></script>
-  <script src="../public/js/carousel.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#login-form').submit(function (event) {
+        // Prevent the default form submission
+        event.preventDefault();
+        // Validate the form fields
+        var username = $('#loginform-username').val();
+        var password = $('#loginform-password').val();
+
+        // Reset previous validation styles
+        $('.form-group').removeClass('has-error');
+        $('.invalid-feedback').text('');
+        // Perform validation
+        if (!username.trim()) {
+          $('#loginform-username').addClass('is-invalid')
+          $('.field-loginform-username').addClass('has-error');
+          $('.field-loginform-username .invalid-feedback').text('Username cannot be blank.');
+        }
+
+        if (!password.trim()) {
+          $('#loginform-password').addClass('is-invalid')
+          $('.field-loginform-password').addClass('has-error');
+          $('.field-loginform-password .invalid-feedback').text('Password cannot be blank.');
+        }
+
+        // If both fields are filled, you can proceed with form submission or other actions
+        if (username.trim() && password.trim()) {
+          // Uncomment the following line to submit the form
+          // $('#login-form').submit();
+          alert('Form submitted successfully!');
+        }
+      });
+    });
+  </script>
+
 </body>
 
 </html>

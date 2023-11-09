@@ -18,10 +18,25 @@
         $("li.nav-item > a.nav-link:contains('Home')").addClass('active');
       })
       $('#banner').load('components/banner.html')
-      $('#slider').load('components/slider.html')
+      $('#slider').load('components/slider.html', () => {
+        $(function () {
+          // Set an interval to switch to the next slide every 6 seconds
+          setInterval(function () {
+            $('#carousel').carousel('next');
+          }, 6000);
+
+          // Reset the interval when a slide is clicked
+          $('.carousel-control-prev, .carousel-control-next').click(function () {
+            clearInterval(intervalId);
+            intervalId = setInterval(function () {
+              $('#carousel').carousel('next');
+            }, 6000);
+          });
+
+        });
+      })
       $('#menu').load('components/menu.html', () => {
         $('.nav-link').click(function (e) {
-          e.preventDefault();
           $('.nav-link').removeClass('active');
           const $this = $(this);
           $this.addClass('active');
@@ -32,12 +47,30 @@
           } else if ($this.text() === "Iphone") {
             $('.card-text:contains("Samsung")').closest('.col').addClass('d-none');
             $('.card-text:contains("Iphone")').closest('.col').removeClass('d-none');
-          } else if ($this.text() === "All"){
+          } else if ($this.text() === "All") {
             $('.col').removeClass('d-none')
           }
         });
       });
-      $('#products').load('components/products.html')
+
+      $('#products').load('components/products.html', () => {
+        $(function () {
+          const $cartQuantity = $('#cart-quantity');
+          const $addToCart = $('.btn-add-to-cart');
+          const $itemQuantities = $('.item-quantity');
+          $addToCart.click(ev => {
+            ev.preventDefault();
+            const $this = $(ev.target);
+            const id = $this.closest('.product-item').data('key');
+            let amount = $('#inputQuantity').val();
+            if (!amount) {
+              amount = 1
+            }
+            $cartQuantity.text(parseInt($cartQuantity.text() || 0) + parseInt(amount))
+            alert(amount + ' item added to your cart');
+          });
+        })
+      })
       $('#footer').load('components/footer.html')
     })
   </script>
@@ -55,7 +88,6 @@
   <div id="footer"></div>
 
   <script src="public/assets/bootstrap-4.6.2/js/bootstrap.bundle.min.js"></script>
-  <script src="../public/js/carousel.js"></script>
 </body>
 
 </html>

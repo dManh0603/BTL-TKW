@@ -9,6 +9,7 @@
   <script src="https://kit.fontawesome.com/e2a332a799.js" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="public/img/logo.svg" type="image/x-icon">
   <script src="public/assets/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="public/css/meyawo.css">
   <link rel="stylesheet" href="public/css/styles.css">
   <script>
     $(() => {
@@ -31,7 +32,7 @@
 
         <div class="col-lg-7">
 
-          <h1>Signup</h1>
+          <h1 style="color: rgba(0, 0, 0, 0.9);">Signup</h1>
           <p>Please fill out the following fields to signup:</p>
 
           <form id="form-signup" action="/site/signup" method="post">
@@ -41,10 +42,10 @@
               <div class="col-md-6">
                 <div class="form-group field-signupform-lastname required">
                   <label for="signupform-lastname">Lastname</label>
-                  <input type="text" id="signupform-lastname" class="form-control is-invalid"
-                    name="SignupForm[lastname]" autofocus="" aria-required="true" aria-invalid="true">
+                  <input type="text" id="signupform-lastname" class="form-control" name="SignupForm[lastname]"
+                    autofocus="" aria-required="true">
 
-                  <div class="invalid-feedback">Lastname cannot be blank.</div>
+                  <div class="invalid-feedback"></div>
                 </div>
               </div>
               <div class="col-md-6">
@@ -80,9 +81,8 @@
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary" name="signup-button">Signup</button>
+              <button type="submit" class="btn btn-outline-dark rounded" name="signup-button">Signup</button>
             </div>
-
           </form>
         </div>
       </div>
@@ -91,7 +91,67 @@
   <div id="footer"></div>
 
   <script src="public/assets/bootstrap-4.6.2/js/bootstrap.bundle.min.js"></script>
-  <script src="../public/js/carousel.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#form-signup').submit(function (event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Reset previous validation styles
+        $('.form-group').removeClass('has-error');
+        $('.invalid-feedback').text('');
+
+        // Validate the form fields
+        var lastname = $('#signupform-lastname').val();
+        var firstname = $('#signupform-firstname').val();
+        var username = $('#signupform-username').val();
+        var email = $('#signupform-email').val();
+        var password = $('#signupform-password').val();
+
+        // Perform validation
+        if (!lastname.trim()) {
+          $('#signupform-lastname').addClass('is-invalid');
+          $('.field-signupform-lastname').addClass('has-error');
+          $('.field-signupform-lastname .invalid-feedback').text('Lastname cannot be blank.');
+        }
+
+        if (!firstname.trim()) {
+          $('#signupform-firstname').addClass('is-invalid');
+          $('.field-signupform-firstname').addClass('has-error');
+          $('.field-signupform-firstname .invalid-feedback').text('Firstname cannot be blank.');
+        }
+
+        if (!username.trim()) {
+          $('#signupform-username').addClass('is-invalid');
+          $('.field-signupform-username').addClass('has-error');
+          $('.field-signupform-username .invalid-feedback').text('Username cannot be blank.');
+        }
+
+        // Add additional validation for email format if needed
+
+        if (!email.trim()) {
+          $('#signupform-email').addClass('is-invalid');
+          $('.field-signupform-email').addClass('has-error');
+          $('.field-signupform-email .invalid-feedback').text('Email cannot be blank.');
+        }
+
+        if (!password.trim()) {
+          $('#signupform-password').addClass('is-invalid');
+          $('.field-signupform-password').addClass('has-error');
+          $('.field-signupform-password .invalid-feedback').text('Password cannot be blank.');
+        }
+
+        // If all fields are filled, you can proceed with form submission or other actions
+        if (lastname.trim() && firstname.trim() && username.trim() && email.trim() && password.trim()) {
+          // Uncomment the following line to submit the form
+          // $('#form-signup').submit();
+          console.log('Form submitted successfully!');
+        }
+      });
+    });
+  </script>
+
 </body>
 
 </html>
