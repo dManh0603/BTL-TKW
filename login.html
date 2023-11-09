@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/assets/bootstrap-4.6.2/css/bootstrap.min.css">
+  <title>Homepage</title>
+  <script src="https://kit.fontawesome.com/e2a332a799.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="public/img/logo.svg" type="image/x-icon">
+  <script src="public/assets/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="public/css/styles.css">
+  <script>
+    $(() => {
+      $('#navbar').load('components/navbar.html', () => {
+        $("li.nav-item > a.nav-link:contains('Login')").addClass('active');
+      })
+      $('#footer').load('components/footer.html')
+    })
+  </script>
+  <script>  (function (g, u, i, d, e, s) { g[e] = g[e] || []; var f = u.getElementsByTagName(i)[0]; var k = u.createElement(i); k.async = true; k.src = 'https://static.userguiding.com/media/user-guiding-' + s + '-embedded.js'; f.parentNode.insertBefore(k, f); if (g[d]) return; var ug = g[d] = { q: [] }; ug.c = function (n) { return function () { ug.q.push([n, arguments]) }; }; var m = ['previewGuide', 'finishPreview', 'track', 'identify', 'hideChecklist', 'launchChecklist']; for (var j = 0; j < m.length; j += 1) { ug[m[j]] = ug.c(m[j]); } })(window, document, 'script', 'userGuiding', 'userGuidingLayer', '5BQ74310YKNID');</script>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div id="banner"></div>
+  <div id="content" class="container px-4 px-lg-5 mt-3" style="min-height:600px">
+    <div class="site-login">
+
+
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <h1>Login</h1>
+          <p>Please fill out the following fields to login:</p>
+
+          <form id="login-form" action="/site/login" method="post">
+            <input type="hidden" name="_csrf-frontend"
+              value="gQRWN3WOUNjHpsHHNHVo0A6MNMTY_TX8QtirSTJZPkDbVyZHB-gyvrfWrPBgOAaGTPl_rL6LB8ks6NIuemBhMw==">
+            <div class="form-group field-loginform-username required">
+              <label for="loginform-username">Username</label>
+              <input type="text" id="loginform-username" class="form-control is-invalid" name="LoginForm[username]"
+                autofocus="" aria-required="true" aria-invalid="true">
+
+              <div class="invalid-feedback">Username cannot be blank.</div>
+            </div>
+            <div class="form-group field-loginform-password required">
+              <label for="loginform-password">Password</label>
+              <input type="password" id="loginform-password" class="form-control" name="LoginForm[password]" value=""
+                autocomplete="on" aria-required="true">
+
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-group field-loginform-rememberme">
+              <div class="custom-control custom-checkbox">
+                <input type="hidden" name="LoginForm[rememberMe]" value="0"><input type="checkbox"
+                  id="loginform-rememberme" class="custom-control-input" name="LoginForm[rememberMe]" value="1">
+                <label class="custom-control-label" for="loginform-rememberme">Remember Me</label>
+                <div class="invalid-feedback"></div>
+
+              </div>
+            </div>
+
+            <!-- <div style="color:#999;margin:1em 0">
+              If you forgot your password you can <a href="/site/request-password-reset">reset it</a>.
+              <br>
+              Need new verification email? <a href="/site/resend-verification-email">Resend</a>
+            </div> -->
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" name="login-button">Login</button>
+            </div>
+
+            <div id="w0">
+              <button type="button" class="mr-5 col authButton authButton-google">
+                <a class="authChoice auth-link" href="/site/auth?authclient=google" title="Google">Login with
+                  Google</a> <i class="ml-3 fa-brands fa-2x fa-google"></i>
+              </button>
+              <hr>
+              <button type="button" class="mr-5 col authButton authButton-facebook">
+                <a class="authChoice auth-link" href="/site/auth?authclient=facebook" title="Facebook"
+                  data-popup-width="860" data-popup-height="480">Login with Facebook</a> <i
+                  class="ml-3 fa-brands fa-2x fa-facebook"></i>
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div>
+
+  <script src="public/assets/bootstrap-4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="../public/js/carousel.js"></script>
+</body>
+
+</html>

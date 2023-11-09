@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/assets/bootstrap-4.6.2/css/bootstrap.min.css">
+  <title>Homepage</title>
+  <script src="https://kit.fontawesome.com/e2a332a799.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="public/img/logo.svg" type="image/x-icon">
+  <script src="public/assets/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="public/css/styles.css">
+  <script>
+    $(() => {
+      $('#navbar').load('components/navbar.html', () => {
+        // $("li.nav-item > a.nav-link:contains('Home')").addClass('active');
+      })
+      $('#footer').load('components/footer.html')
+      $('#products').load('components/products.html')
+    })
+  </script>
+  <script>  (function (g, u, i, d, e, s) { g[e] = g[e] || []; var f = u.getElementsByTagName(i)[0]; var k = u.createElement(i); k.async = true; k.src = 'https://static.userguiding.com/media/user-guiding-' + s + '-embedded.js'; f.parentNode.insertBefore(k, f); if (g[d]) return; var ug = g[d] = { q: [] }; ug.c = function (n) { return function () { ug.q.push([n, arguments]) }; }; var m = ['previewGuide', 'finishPreview', 'track', 'identify', 'hideChecklist', 'launchChecklist']; for (var j = 0; j < m.length; j += 1) { ug[m[j]] = ug.c(m[j]); } })(window, document, 'script', 'userGuiding', 'userGuidingLayer', '5BQ74310YKNID');</script>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div id="content" class="container px-4 px-lg-5 mt-3" style="min-height:600px">
+    <div class="card">
+      <div class="card-header">
+        <h3>Your cart items</h3>
+      </div>
+      <div class="card-body">
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Image</th>
+              <th>Unit Price</th>
+              <th>Quantity</th>
+              <th>Total cost</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-id="1" data-url="/cart/change-quantity">
+              <td>Iphone 15</td>
+              <td>
+                <img
+                  src="http://ecom.localhost/storage/products/cFtXHRwv2cKWf5Kw/iphone-13-pro-max-xanh-la-thumb-600x600.jpg"
+                  style="width: 70px" alt="Iphone 15">
+              </td>
+              <td>$ 1 500,00</td>
+              <td>
+                <input type="number" min="1" class="form-control item-quantity" style="width: 60px" value="1">
+              </td>
+              <td>$ 1 500,00</td>
+              <td>
+                <a class="btn btn-outline-danger btn-sm" href="/cart/delete?id=1" data-method="post"
+                  data-confirm="Are you sure want to remove this product from cart ?">Delete</a>
+              </td>
+            </tr>
+            <tr data-id="4" data-url="/cart/change-quantity">
+              <td>Samsung Galaxy gì gì đó</td>
+              <td>
+                <img
+                  src="http://ecom.localhost/storage/products/SoEhYfMZE2RPisLo/samsung-galaxy-a23-xanh-thumb-600x600.jpg"
+                  style="width: 70px" alt="Samsung Galaxy gì gì đó">
+              </td>
+              <td>$ 100,00</td>
+              <td>
+                <input type="number" min="1" class="form-control item-quantity" style="width: 60px" value="1">
+              </td>
+              <td>$ 100,00</td>
+              <td>
+                <a class="btn btn-outline-danger btn-sm" href="/cart/delete?id=4" data-method="post"
+                  data-confirm="Are you sure want to remove this product from cart ?">Delete</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="card-body text-right">
+          <a class="btn btn-primary" href="/cart/checkout">Checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div>
+
+  <script src="public/assets/bootstrap-4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="../public/js/carousel.js"></script>
+</body>
+
+</html>

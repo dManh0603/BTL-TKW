@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/assets/bootstrap-4.6.2/css/bootstrap.min.css">
+  <title>Homepage</title>
+  <script src="https://kit.fontawesome.com/e2a332a799.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="public/img/logo.svg" type="image/x-icon">
+  <script src="public/assets/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="public/css/styles.css">
+  <script>
+    $(() => {
+      $('#navbar').load('components/navbar.html', () => {
+        // $("li.nav-item > a.nav-link:contains('Home')").addClass('active');
+      })
+      $('#footer').load('components/footer.html')
+    })
+  </script>
+  <script>  (function (g, u, i, d, e, s) { g[e] = g[e] || []; var f = u.getElementsByTagName(i)[0]; var k = u.createElement(i); k.async = true; k.src = 'https://static.userguiding.com/media/user-guiding-' + s + '-embedded.js'; f.parentNode.insertBefore(k, f); if (g[d]) return; var ug = g[d] = { q: [] }; ug.c = function (n) { return function () { ug.q.push([n, arguments]) }; }; var m = ['previewGuide', 'finishPreview', 'track', 'identify', 'hideChecklist', 'launchChecklist']; for (var j = 0; j < m.length; j += 1) { ug[m[j]] = ug.c(m[j]); } })(window, document, 'script', 'userGuiding', 'userGuidingLayer', '5BQ74310YKNID');</script>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div id="content" class="container px-4 px-lg-5 mt-3" style="min-height:600px">
+
+    <!-- Item section -->
+    <section class="py-5 bg-white">
+      <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-start">
+          <div class="col-md-6">
+            <img class="card-img-top mb-5 mb-md-0"
+              src="http://ecom.localhost/storage/products/yWxri_5sfuEqTfW1/iphone-12-mini-do-600x600.jpeg" alt="...">
+          </div>
+          <div class="col-md-6 product-item" data-key="2">
+            <div class="row">
+              <h1 class="col display-5 fw-bolder">Iphone 12</h1>
+            </div>
+            <div class="fs-5 mb-2">
+              <h3 class="text-monospace">$ 999,00</h3>
+            </div>
+            <p class="lead">Description</p>
+            <p>- 6.1-inch Super Retina XDR OLED display that delivers bright and vivid colors, sharp details, and HDR10
+              and Dolby Vision support¹².</p>
+
+            <p>- Ceramic shield glass that protects the screen from scratches and drops, and an aluminum frame that
+              gives it a premium feel¹².</p>
+
+            <p>- Dual rear camera system that consists of a 12 MP wide-angle lens and a 12 MP ultra-wide-angle lens. The
+              camera can capture stunning photos and videos in low-light conditions, thanks to the improved night mode
+              and the optical image stabilization¹²³.</p>
+
+            <p>- 12 MP front-facing camera that supports Face ID, which is a secure and convenient way to unlock the
+              phone and use Apple Pay¹².</p>
+
+            <p>- A14 Bionic chip that is the fastest and most efficient processor in any smartphone. It can handle
+              demanding tasks such as gaming, video editing, and augmented reality¹²³.</p>
+
+            <p>- 2,815 mAh battery that can last up to 17 hours of video playback, and supports wireless charging and
+              fast charging¹³.</p>
+
+            <p>- It comes in five colors: black, white, red, green, and blue¹². You can also choose from three storage
+              options: 64 GB, 128 GB, and 256 GB¹².</p>
+
+            <p>&nbsp;</p>
+            <p></p>
+            <div class="d-flex">
+              <input class="form-control text-center me-3" id="inputQuantity" type="number" min="1" value="1"
+                style="width: 70px">
+              <a class="btn btn-outline-dark mt-auto btn-add-to-cart ml-2" href="/cart/add">
+                <i class="bi-cart-fill me-1"></i>
+                Add to cart
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comments section -->
+    <section class="py-5 bg-light">
+      <div class="container px-4 px-lg-5 mt-3">
+        <h2 class="fw-bolder mb-4">
+          <span id="comment-count">0</span> Comments
+        </h2>
+
+        <div class="create-comment mb-4">
+          <div class="media mt-3">
+            <img class="mr-3 user-comment-avt rounded-circle" src="/public/img/undraw_profile.svg"
+              alt="Generic placeholder image">
+            <div class="media-body">
+              <form class="create-comment-form" method="post" action="/comment/create?id=2">
+                <input type="hidden" name="product_id" value="2">
+                <textarea class="comment-input form-control" rows="1" placeholder="Help us improve with your reviews"
+                  name="comment">Help us improve with your reviews</textarea>
+                <small class="comment-errors text-danger"></small>
+                <div class="actions-button text-right mt-3">
+                  <button class="btn btn-secondary btn-cancel">Cancel</button>
+                  <button class="btn btn-primary btn-save">Comment</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="p0" data-pjax-container="" data-pjax-push-state="" data-pjax-timeout="1000">
+          <div id="comment-wrapper" class="comment-wrapper">
+            <nav id="w0"></nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related items section-->
+    <section class="py-5 bg-white">
+      <div class="container px-4 px-lg-5 mt-3">
+        <h2 class="fw-bolder mb-4">Related products</h2>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <div class="col mb-5" style="border: 1px solid rgba(0, 0, 0, 0.125);">
+            <!-- Product image-->
+            <div class="img-wrapper">
+              <a href="/product3details.html">
+                <img class="card-img-top img-zoom-hover img-fluid" src="../public/img/product 3.jpg" alt="...">
+              </a>
+            </div>
+            <!-- Product details-->
+            <div class="card-body pt-4 px-4 pb-0">
+              <div class="text-center">
+                <!-- Product name-->
+                <p class="h5 card-text fw-bolder">Iphone 13</p>
+                <!-- Product price-->
+                $ 1 999,00
+              </div>
+              <div class="card-text">
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color" aria-hidden="true"></i>
+                    <i class="fa fa-star rating-color" aria-hidden="true"></i>
+                    <i class="fa fa-star rating-color" aria-hidden="true"></i>
+                    <i class="fa fa-star rating-color" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <p class="h6 card-text text-center review-count">12 Reviews</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Product actions -->
+              <div class="text-center pt-4">
+                <a class="btn btn-outline-dark mt-auto btn-add-to-cart" href="/cart/add">
+                  Add to cart
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <div id="footer"></div>
+
+  <script src="public/assets/bootstrap-4.6.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

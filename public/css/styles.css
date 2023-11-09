@@ -1,0 +1,359 @@
+main>.container {
+  padding: 70px 15px 20px;
+}
+
+.footer {
+  background-color: #f5f5f5;
+  font-size: .9em;
+  height: 60px;
+}
+
+.footer>.container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.not-set {
+  color: #c55;
+  font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after,
+a.desc:after {
+  content: '';
+  left: 3px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: solid 5px transparent;
+  margin: 4px 4px 2px 4px;
+  background: transparent;
+}
+
+a.asc:after {
+  border-bottom: solid 7px #212529;
+  border-top-width: 0;
+}
+
+a.desc:after {
+  border-top: solid 7px #212529;
+  border-bottom-width: 0;
+}
+
+.grid-view th,
+.grid-view td:last-child {
+  white-space: nowrap;
+}
+
+.grid-view .filters input,
+.grid-view .filters select {
+  min-width: 50px;
+}
+
+.hint-block {
+  display: block;
+  margin-top: 5px;
+  color: #999;
+}
+
+.error-summary {
+  color: #a94442;
+  background: #fdf7f7;
+  border-left: 3px solid #eed3d7;
+  padding: 10px 20px;
+  margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li>form>button.logout {
+  padding-top: 7px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.white-space-nowrap {
+  white-space: nowrap;
+}
+
+/* desktopsize */
+@media (min-width: 992px) {
+  .item {
+    max-width: 25% !important;
+  }
+
+}
+
+/* tabletsize */
+@media (min-width: 768px) and (max-width: 992px) {}
+
+/* mobilesize */
+@media (max-width: 767px) {
+  .nav li>form>button.logout {
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+.nav>li>form>button.logout:focus,
+.nav>li>form>button.logout:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.nav>li>form>button.logout:focus {
+  outline: none;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #06599b 10%, #01ef96 50%, #06599b 90%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text 2s linear infinite;
+}
+
+@keyframes gradient-text {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through !important;
+}
+
+.scroll-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  text-align: center;
+  color: #fff;
+  background: rgba(90, 92, 105, .5);
+  line-height: 46px;
+}
+
+.scroll-to-top:focus,
+.scroll-to-top:hover {
+  color: #fff
+}
+
+.fa-angle-up:before {
+  content: "\f106";
+}
+
+.card-body {
+  max-height: 40%
+}
+
+.card-footer {
+  max-height: 10%
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 50%;
+}
+
+.img-wrapper img {
+  scale: 0.8;
+  transition: all .5s;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.img-wrapper img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.ratings {
+  margin-right: 10px;
+}
+
+.review-count {
+  font-weight: 400;
+  margin-bottom: 2px;
+  font-size: 1rem !important;
+}
+
+
+.ratings i {
+
+  color: #cecece;
+  font-size: 32px;
+}
+
+.rating-color {
+  color: #fbc634 !important;
+}
+
+.small-ratings i {
+  color: #cecece;
+}
+
+.nav-search-bar {
+  width: 16rem;
+}
+
+.user-comment-avt {
+  width: 4rem;
+}
+
+.sub-comments .comment-avt {
+  width: 28px;
+}
+
+.comment-avt {
+  width: 3rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.active {
+  color: #000 !important;
+  opacity: 1 !important;
+}
+
+.create-comment .actions-button {
+  display: none;
+}
+
+.create-comment.focused .actions-button {
+  display: block;
+}
+
+.comment-actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.comment-item {
+  position: relative;
+}
+
+/*uncomment the following to enable dropdown caret */
+.comment-actions .dropdown-toggle:after {
+  display: none
+}
+
+.comment-item .media-input {
+  display: none;
+}
+
+.comment-item.edit .media-comment {
+  display: none;
+}
+
+.comment-item.edit .media-input {
+  display: flex;
+}
+
+.background-white {
+  background-color: white;
+}
+
+.max-width-150 {
+  max-width: 150px;
+}
+
+.comment-input {
+  padding: 0.5rem 1rem;
+  border: 2px solid #cfcfcf;
+  color: #838383;
+}
+
+.create-comment.focused .comment-input {
+  color: #000
+}
+
+.comment-input {
+  border-radius: 10px 10px 10px 10px
+}
+
+.comment-input:focus {
+  color: #000
+}
+
+.carousel {
+  display: grid;
+  place-items: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  height: 100%;
+}
+
+.bg-black {
+  background-color: black !important;
+}
+
+.carousel-inner {
+  width: 90%;
+}
+
+.carousel-img {
+  overflow: hidden;
+}
+
+.carousel-img img {
+  width: 100%;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.banner {
+  min-width: 10vh;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.authChoice {
+  color: inherit;
+  text-decoration: none;
+  font-size: larger;
+}
+
+.authChoice:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.authButton {
+  /*height:40px;*/
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none
+}
+
+.authButton-google {
+  color: white;
+  background-color: #DD4B39
+}
+
+.authButton-facebook {
+  color: white;
+  background-color: #4C69BA
+}
+
+footer {
+  width: 100%;
+}

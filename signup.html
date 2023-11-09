@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/assets/bootstrap-4.6.2/css/bootstrap.min.css">
+  <title>Homepage</title>
+  <script src="https://kit.fontawesome.com/e2a332a799.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="public/img/logo.svg" type="image/x-icon">
+  <script src="public/assets/jquery-3.7.1/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="public/css/styles.css">
+  <script>
+    $(() => {
+      $('#navbar').load('components/navbar.html', () => {
+        $("li.nav-item > a.nav-link:contains('Signup')").addClass('active');
+      })
+      $('#footer').load('components/footer.html')
+    })
+  </script>
+  <script>  (function (g, u, i, d, e, s) { g[e] = g[e] || []; var f = u.getElementsByTagName(i)[0]; var k = u.createElement(i); k.async = true; k.src = 'https://static.userguiding.com/media/user-guiding-' + s + '-embedded.js'; f.parentNode.insertBefore(k, f); if (g[d]) return; var ug = g[d] = { q: [] }; ug.c = function (n) { return function () { ug.q.push([n, arguments]) }; }; var m = ['previewGuide', 'finishPreview', 'track', 'identify', 'hideChecklist', 'launchChecklist']; for (var j = 0; j < m.length; j += 1) { ug[m[j]] = ug.c(m[j]); } })(window, document, 'script', 'userGuiding', 'userGuidingLayer', '5BQ74310YKNID');</script>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div id="banner"></div>
+  <div id="content" class="container px-4 px-lg-5 mt-3" style="min-height:600px">
+    <div class="site-signup">
+
+      <div class="row justify-content-center">
+
+        <div class="col-lg-7">
+
+          <h1>Signup</h1>
+          <p>Please fill out the following fields to signup:</p>
+
+          <form id="form-signup" action="/site/signup" method="post">
+            <input type="hidden" name="_csrf-frontend"
+              value="dpVUVfICa4KCHQOlKIXFUZlQlcIa37SQJs8LXesOtyEsxiQlgGQJ5PJtbpJ8yKsH2yXeqnyphqVI_3I6ozfoUg==">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group field-signupform-lastname required">
+                  <label for="signupform-lastname">Lastname</label>
+                  <input type="text" id="signupform-lastname" class="form-control is-invalid"
+                    name="SignupForm[lastname]" autofocus="" aria-required="true" aria-invalid="true">
+
+                  <div class="invalid-feedback">Lastname cannot be blank.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group field-signupform-firstname required">
+                  <label for="signupform-firstname">Firstname</label>
+                  <input type="text" id="signupform-firstname" class="form-control" name="SignupForm[firstname]"
+                    autofocus="" aria-required="true">
+
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group field-signupform-username required">
+              <label for="signupform-username">Username</label>
+              <input type="text" id="signupform-username" class="form-control" name="SignupForm[username]" autofocus=""
+                aria-required="true">
+
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-group field-signupform-email required">
+              <label for="signupform-email">Email</label>
+              <input type="text" id="signupform-email" class="form-control" name="SignupForm[email]"
+                aria-required="true">
+
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-group field-signupform-password required">
+              <label for="signupform-password">Password</label>
+              <input type="password" id="signupform-password" class="form-control" name="SignupForm[password]"
+                aria-required="true">
+
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" name="signup-button">Signup</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div>
+
+  <script src="public/assets/bootstrap-4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="../public/js/carousel.js"></script>
+</body>
+
+</html>
