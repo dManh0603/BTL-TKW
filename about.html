@@ -100,6 +100,21 @@
   <div id="footer"></div>
 
   <script src="public/assets/bootstrap-4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $("#downloadButton").click(function () {
+      // Create an anchor element
+      var anchor = $("<a>");
+
+      // Set the href attribute to the path of the file you want to download
+      anchor.attr("href", "assets/download/CV_Nguyễn Đức Mạnh.pdf"); // Replace 'cv.pdf' with the actual file name and path
+
+      // Set the download attribute to specify the file name seen by the user when downloading
+      anchor.attr("download", "CV_Nguyễn Đức Mạnh.pdf"); // You can customize the file name here
+
+      // Trigger a click event on the anchor element to start the download
+      anchor[0].click();
+    });
+  </script>
 </body>
 
 </html>
