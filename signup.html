@@ -127,8 +127,6 @@
           $('.field-signupform-username .invalid-feedback').text('Username cannot be blank.');
         }
 
-        // Add additional validation for email format if needed
-
         if (!email.trim()) {
           $('#signupform-email').addClass('is-invalid');
           $('.field-signupform-email').addClass('has-error');
@@ -143,8 +141,6 @@
 
         // If all fields are filled, you can proceed with form submission or other actions
         if (lastname.trim() && firstname.trim() && username.trim() && email.trim() && password.trim()) {
-          // Uncomment the following line to submit the form
-          // $('#form-signup').submit();
           console.log('Form submitted successfully!');
         }
       });
