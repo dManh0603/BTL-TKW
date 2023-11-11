@@ -125,33 +125,25 @@
   <script>
     $(document).ready(function() {
       $('.item-quantity').on('input', function() {
-        // Get the current quantity value
         var quantity = $(this).val();
   
-        // Get the unit price for the product and remove spaces
         var unitPrice = parseFloat($(this).closest('tr').find('.unit-price').text().replace('$', '').replace(/ /g, '').trim());
   
-        // Calculate the new row total cost
         var rowTotalCost = quantity * unitPrice;
   
-        // Update the row total cost for the current product
         $(this).closest('tr').find('.row-total-cost').text('$ ' + rowTotalCost.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','));
   
-        // Update the summary row quantity and total cost
         updateSummary();
       });
   
       function updateSummary() {
-        // Initialize total quantity and total cost
         var totalQuantity = 0;
         var totalCost = 0;
   
-        // Loop through each product row
         $('.item-quantity').each(function() {
           var quantity = parseFloat($(this).val());
           var unitPrice = parseFloat($(this).closest('tr').find('.unit-price').text().replace('$', '').replace(/ /g, '').trim());
   
-          // Update total quantity and total cost
           totalQuantity += quantity;
           totalCost += quantity * unitPrice;
         });
