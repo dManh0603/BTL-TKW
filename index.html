@@ -37,7 +37,6 @@
       })
       $('#menu').load('components/menu.html', () => {
         $('.nav-link').click(function (e) {
-          e.preventDefault();
           $('.nav-link').removeClass('active');
           const $this = $(this);
           $this.addClass('active');
@@ -49,11 +48,13 @@
             $('.card-text:contains("Samsung")').closest('.col').removeClass('d-none');
           } else if ($this.text() === "Iphone") {
             e.preventDefault();
+
             $('.card-text:contains("Samsung")').closest('.col').addClass('d-none');
             $('.card-text:contains("Iphone")').closest('.col').removeClass('d-none');
 
           } else if ($this.text() === "All") {
             e.preventDefault();
+
             $('.col').removeClass('d-none')
 
           }
