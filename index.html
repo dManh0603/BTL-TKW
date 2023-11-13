@@ -37,6 +37,7 @@
       })
       $('#menu').load('components/menu.html', () => {
         $('.nav-link').click(function (e) {
+          e.preventDefault();
           $('.nav-link').removeClass('active');
           const $this = $(this);
           $this.addClass('active');
